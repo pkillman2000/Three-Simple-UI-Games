@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 08136bced85267e4699441893f017867
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Happy Kids
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b76f7748302a6f54c989e9e8fa6cf1e2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

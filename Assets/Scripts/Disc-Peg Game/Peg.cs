@@ -8,12 +8,13 @@ public class Peg : MonoBehaviour, IDropHandler
 {
     [SerializeField]
     private int _pegIndex;
+    [SerializeField]
+    private GameObject _peg;
 
-    private int _pegYLocation;
     private DPManager _dpManager;
 
 
-    private void Start()
+    private void Awake()
     {
         _dpManager = FindObjectOfType<DPManager>();
         if(_dpManager == null)
@@ -22,17 +23,11 @@ public class Peg : MonoBehaviour, IDropHandler
         }
 
         // Tell DP Manager Y location of this peg
-        _dpManager.SetPegYLocation(_pegIndex, this.transform.localPosition.y);
-    }
-
-    
-    private void Update()
-    {
-        
+        _dpManager.SetPegYLocation(_pegIndex, _peg.gameObject.transform.localPosition.y);
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        _dpManager.UpdateDiscLocation(eventData.pointerDrag.gameObject, _pegIndex); 
+        _dpManager.UpdateDiscLocation(eventData.pointerDrag.gameObject, _pegIndex);
     }
 }

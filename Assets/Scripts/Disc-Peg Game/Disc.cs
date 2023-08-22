@@ -8,14 +8,16 @@ public class Disc : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
 {
     [SerializeField]
     private int _discSize;
-    public int _currentPeg;
-    public int _currentSlot;
+    private int _currentPeg;
+    private int _currentSlot;
     private Vector3 _originalLocation;
 
     private Image _image;
     private Color _tempColor;
 
-    private void Start()
+    private bool _canMove = true;
+
+    private void Awake()
     {
         _image = GetComponent<Image>();
         if(_image == null ) 
@@ -36,7 +38,6 @@ public class Disc : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
     public void ReturnToOriginalSlot()
     {
         this.transform.localPosition = _originalLocation;
-
     }
 
     public int GetDiscSize() 
@@ -54,24 +55,44 @@ public class Disc : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
         return _currentSlot;
     }
 
+    public void SetCanMove(bool canMove)
+    {
+        _canMove = canMove;
+        _image.raycastTarget = canMove;
+    }
+
+    public bool GetCanMove() 
+    {
+        return _canMove;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        _tempColor = _image.color;
-        _tempColor.a = 0.5f;
-        _image.color = _tempColor;
-        _image.raycastTarget = false;
+        if(_canMove)
+        {
+            _tempColor = _image.color;
+            _tempColor.a = 0.5f;
+            _image.color = _tempColor;
+            _image.raycastTarget = false;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _tempColor = _image.color;
-        _tempColor.a = 1.0f;
-        _image.color = _tempColor;
-        _image.raycastTarget = true;
+        if(_canMove)
+        {
+            _tempColor = _image.color;
+            _tempColor.a = 1.0f;
+            _image.color = _tempColor;
+            _image.raycastTarget = true;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.transform.position = eventData.position;
+        if(_canMove)
+        {
+            this.transform.position = eventData.position;
+        }
     }
 }

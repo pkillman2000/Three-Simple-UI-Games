@@ -119,10 +119,7 @@ public class DPManager : MonoBehaviour
     {
         if (_pegs_Slots[_pegsY.Length-1, _slotsX.Length-1] != null) 
         {
-            Debug.Log("Victory!");
-            // stop all disc movement
-            // Fireworks - Text
-            // Write score to playerpref if necessary
+            _dpUIManager.ShowVictoryPanel();
         }
     }
 }

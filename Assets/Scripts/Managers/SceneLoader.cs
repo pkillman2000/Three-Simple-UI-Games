@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
 
+// Put this prefab in every scene
+
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;

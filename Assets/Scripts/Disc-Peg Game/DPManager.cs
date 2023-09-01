@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script needs to be in the Game Panel
+ * in order to make the coordinates for the
+ * pegs and discs correct without having to
+ * translate between different coordinate
+ * systems
+*/
+
 public class DPManager : MonoBehaviour
 {
     [SerializeField]

@@ -12,13 +12,17 @@ public class DPUIManager : MonoBehaviour
     [SerializeField]
     private TMP_Text _victoryScoreText;
     [SerializeField]
+    private TMP_Text _savedScore;
+    [SerializeField]
     private GameObject _instructionPanel;
     [SerializeField]
     private GameObject _gamePanel;
     [SerializeField]
     private GameObject _victoryPanel;
+    [SerializeField]
+    private Canvas _canvas;
 
-    private int _score = 0;
+    private int _currentScore = 0;
     private SceneLoader _sceneLoader;
         
     private void Start()
@@ -29,14 +33,16 @@ public class DPUIManager : MonoBehaviour
             Debug.LogError("Scene Loader is Null!");
         }
 
-        _scoreText.text = "Score: " + _score.ToString();
+        _canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+        _scoreText.text = "Score: " + _currentScore.ToString();
         ShowGamePanel();
     }
 
     public void IncrementScore()
     {
-        _score++;
-        _scoreText.text = "Score: " + _score.ToString();
+        _currentScore++;
+        _scoreText.text = "Score: " + _currentScore.ToString();
     }
 
     private void HideAllPanels()
@@ -60,9 +66,21 @@ public class DPUIManager : MonoBehaviour
 
     public void ShowVictoryPanel()
     {
+        int savedScore;
+        _canvas.renderMode = RenderMode.ScreenSpaceCamera;
         HideAllPanels();
         _victoryPanel.SetActive(true);
-        _victoryScoreText.text = _score.ToString();
+        _victoryScoreText.text = _currentScore.ToString();
+
+        savedScore = PlayerPrefs.GetInt("DiscPeg", 999);
+
+        if (_currentScore < savedScore)
+        {
+            PlayerPrefs.SetInt("DiscPeg", _currentScore);
+        }
+
+        _savedScore.text = savedScore.ToString();
+
         StartCoroutine(VictoryTextBlinkRoutine());
 
     }

@@ -944,6 +944,18 @@ MonoBehaviour:
           m_StringArgument: Guess Number Game
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1798861596}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayControlPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1413071670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,6 +1346,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646707559}
   m_CullTransparentMesh: 1
+--- !u!1001 &1798861595
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8586636426920264805, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586636426920264809, guid: 780c64e13b8887641b007ca71b460ebd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 780c64e13b8887641b007ca71b460ebd, type: 3}
+--- !u!114 &1798861596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8586636426920264804, guid: 780c64e13b8887641b007ca71b460ebd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1798861595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d74dabf7d55f445afea27e07138e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852441013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1646,18 @@ MonoBehaviour:
           m_StringArgument: Arrange Tiles Game
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1798861596}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayControlPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1895521124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,6 +1812,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Disc-Peg Game
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1798861596}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayControlPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2023537734

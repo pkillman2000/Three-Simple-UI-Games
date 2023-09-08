@@ -21,6 +21,7 @@ public class DPManager : MonoBehaviour
     [SerializeField]
     private GameObject[,] _pegs_Slots;
 
+
     private DPUIManager _dpUIManager;
 
     private void Start()
@@ -74,8 +75,6 @@ public class DPManager : MonoBehaviour
             {
                 firstEmptySlot = i + 1;
                 int slotDiscSize = _pegs_Slots[newPeg, i].GetComponent<Disc>().GetDiscSize();
-                //Debug.Log("New Peg: " + newPeg + " Slot: " + i);
-                //Debug.Log("Slot Disc Size: " + slotDiscSize + " Moving Disc Size: " + discSize);
                 if (slotDiscSize <= discSize)
                 {
                     isValidMove = false;

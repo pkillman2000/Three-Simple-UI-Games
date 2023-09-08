@@ -23,6 +23,8 @@ public class ATUIManager : MonoBehaviour
 
     [SerializeField]
     private TMP_Text _victoryScore;
+    [SerializeField]
+    private TMP_Text _savedScore;
 
     private void Start()
     {
@@ -58,9 +60,21 @@ public class ATUIManager : MonoBehaviour
 
     public void VictoryPanelActive() 
     {
+        int savedScore = 99;
+
         HideAllPanels();
         _victoryPanel.SetActive(true);
         _victoryScore.text = _currentScore.ToString();
+
+        savedScore = PlayerPrefs.GetInt("ArrangeTiles", 999);
+
+        if(_currentScore < savedScore)
+        {
+            PlayerPrefs.SetInt("ArrangeTiles", _currentScore);
+        }
+
+        _savedScore.text = savedScore.ToString();
+
         StartCoroutine(VictoryTextBlinkRoutine());
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Drawing;
 
 public class Disc : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
@@ -13,7 +14,7 @@ public class Disc : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
     private Vector3 _originalLocation;
 
     private Image _image;
-    private Color _tempColor;
+    private UnityEngine.Color _tempColor;
 
     private bool _canMove = true;
 
@@ -71,7 +72,7 @@ public class Disc : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDrag
         if(_canMove)
         {
             _tempColor = _image.color;
-            _tempColor.a = 0.5f;
+            _tempColor.a = 0.75f;
             _image.color = _tempColor;
             _image.raycastTarget = false;
         }

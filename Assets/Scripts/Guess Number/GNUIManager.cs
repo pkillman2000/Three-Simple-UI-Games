@@ -15,6 +15,8 @@ public class GNUIManager : MonoBehaviour
     [SerializeField]
     private TMP_Text _scoreText;
     [SerializeField]
+    private TMP_Text _savedScore;
+    [SerializeField]
     private GameObject _defeatPanel;
 
     private void Start()
@@ -45,9 +47,21 @@ public class GNUIManager : MonoBehaviour
 
     public void OpenVictoryPanel(int score)
     {
+        int savedScore;
+
         CloseAllPanels();
         _victoryPanel.SetActive(true);
         _scoreText.text = score.ToString();
+
+        savedScore = PlayerPrefs.GetInt("GuessNumber", 999);
+
+        if (score < savedScore)
+        {
+            PlayerPrefs.SetInt("GuessNumber", score);
+        }
+
+        _savedScore.text = savedScore.ToString();
+
     }
 
     public void OpenDefeatPanel()

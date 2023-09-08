@@ -54,7 +54,9 @@ public class GNManager : MonoBehaviour
     {
         _currentGuessWidgetPrefab = null;
         _currentGuessWidgetPrefab = Instantiate(_guessWidgetPrefab);
-        _currentGuessWidgetPrefab.transform.SetParent(_guessesParent);
+        _currentGuessWidgetPrefab.transform.SetParent(_guessesParent, true);
+        _currentGuessWidgetPrefab.transform.localScale = Vector3.one;
+        _currentGuessWidgetPrefab.transform.localPosition = Vector3.zero;
         _currentGuessWidgetScript = _currentGuessWidgetPrefab.GetComponent<GuessWidget>();
         _currentTurn++;
         _currentGuess = "";
